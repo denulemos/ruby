@@ -4,6 +4,8 @@
 * En vez de null, esta **nil**
 * Si un valor no booleano es evaluado como true, para Ruby es **truthy** o, de lo contrario **falsey**, como puede ser el 0, o un nil.
 
+
+
 ## Metodos Arrays
 
 * `array.length` o `array.size` : Cantidad de elementos en el array.
