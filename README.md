@@ -102,5 +102,28 @@ La Lambda es algo muy parecido al Proc, es mas, la lambda es una instancia de un
 
 Creamos una lambda de la siguiente manera : `talk = lambda {puts "Hi"} ` o podemos usar otra sintaxis como `talk = ->() {puts "Hi"}`
 
-una lambda es una funcion anonima. 
+Una lambda es una funcion anonima.
+
+Si bien las procs y las lambdas son muy parecidas, tienen varias diferencias.
+
+* Las lambdas chequean la cantidad de argumentos que se les estan mandando, las procs no.
+
+```ruby
+talk = lambda { |x| puts "Hello #{x}" }
+talk_proc = Proc.new { |x| puts "Hello #{x}" }
+
+talk_proc.call # Hello
+talk.call # Error
+```
+
+# Manejo de Archivos
+
+## Tipos de archivos (Ingles)
+
+**r** read-only, starts at beginning of file (default mode).
+**r+** read-write, starts at beginning of file.
+**w** write-only, truncates existing file to zero length or creates a new file for writing.
+**w+** read-write, truncates existing file to zero length overwriting existing data or creates a new file for reading and writing.
+**a** write-only, appends to end of file if file exists, otherwise creates a new file for writing.
+**a+** read-write, appends or reads from end of file if file exists, otherwise creates a new file for reading and writing.
 
