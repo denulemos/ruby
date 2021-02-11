@@ -58,3 +58,49 @@ puts c1 < c2
 Es para organizar clases similares en un solo modulo. Como poner la clase perro y gato dentro de un solo modulo.
 Tambien sirve como un contenedor de metodos.
 
+## Procs
+
+Es tomar un bloque de codigo, envolverlo en un objeto llamado proc y guardarlo en una variable. Podemos correr el codigo de ese bloque las veces que queramos y como queramos.
+
+```ruby
+greet = Proc.new do |x|
+
+  puts "Welcome #{x}"
+
+end
+```
+
+Son muy similares a los metodos, realizan operaciones y pueden incluir parametros.
+
+```ruby
+greet = Proc.new do |x|
+
+  puts "Welcome #{x}"
+
+end
+
+
+
+goodbye = Proc.new do |x|
+
+  puts "Goodbye #{x}"
+
+end
+
+
+
+def say(arr, proc)
+
+  arr.each { |x| proc.call x}
+
+end
+```
+
+### Lambdas
+
+La Lambda es algo muy parecido al Proc, es mas, la lambda es una instancia de una Proc.
+
+Creamos una lambda de la siguiente manera : `talk = lambda {puts "Hi"} ` o podemos usar otra sintaxis como `talk = ->() {puts "Hi"}`
+
+una lambda es una funcion anonima. 
+
