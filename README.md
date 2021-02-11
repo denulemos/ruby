@@ -4,8 +4,6 @@
 * En vez de null, esta **nil**
 * Si un valor no booleano es evaluado como true, para Ruby es **truthy** o, de lo contrario **falsey**, como puede ser el 0, o un nil.
 
-
-
 ## Metodos Arrays
 
 * `array.length` o `array.size` : Cantidad de elementos en el array.
@@ -25,4 +23,38 @@
 * `hash.keys` : Crea un array con las keys del hash
 * `hash.values`: Crea un array con los valores del hash
 * `hash.length` : Devuelve la cantidad de hashes
+
+## Modulos
+
+Es una manera de agrupar metodos todos juntos, un modulo es una coleccion de metodos que pueden ser usados en otras clases, como librerias, no pueden ser instanciados en si mismos.
+En Ruby no podemos heredar de varias clases, pero si implementar varios modulos, a esto se le dice **mixins**
+La herencia dice que algo es, el modulo dice que algo tiene.
+
+### Mixins
+
+Ruby ya viene con algunos mixins ya incluidos y listos para usar, como **Comparable** que sirve para agregar comparaciones logicos a una clase.
+
+```ruby
+class Cat
+attr_accessor :name, :age
+include Comparable
+def initialize(n, a)
+self.name = n
+self.age = a
+end
+def <=>(other)
+self.age <=> other.age
+end
+end
+
+c1 = Cat.new("Bob", 3)
+c2 = Cat.new("Lucy", 7)
+
+puts c1 < c2
+```
+
+### Namespacing
+
+Es para organizar clases similares en un solo modulo. Como poner la clase perro y gato dentro de un solo modulo.
+Tambien sirve como un contenedor de metodos.
 
