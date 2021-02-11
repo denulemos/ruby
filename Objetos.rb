@@ -85,3 +85,28 @@ end
 p = Person5.new("David", 28)
 p.change("Bob", 42)
 p.show_info
+
+class Person7
+  def self.info # Metodos que se pueden invocar sin instanciar a la clase
+      puts "A Person"
+  end
+  @@count = 0 # Variable de clase
+  def initialize
+      @@count += 1
+  end
+  def self.get_count
+      @@count
+  end
+end
+
+Person7.info # En ningun momento hice un new
+p1 = Person7.new
+p2 = Person7.new
+
+puts Person7.get_count # 2
+
+class Calc
+  PI = 3.14 # Constante
+end
+
+puts Calc::PI # Accedo a lo constante
